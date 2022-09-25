@@ -73,16 +73,10 @@ go run cmd/app/main.go
 > **NOTE**: It will be better to run in docker to avoid unexpected errors.
 
 ### Test the server:
-Visit the following links to get data:
-
-> [http://127.0.0.1:8080/graphql?query=query](http://127.0.0.1:8080/graphql?query=<query>)
-
 #### Queries:
 1. Query for `GetAllBooksWithAuthors`: 
 
-> [{books{id,title,price,isbn_no,authors{id,name,biography}}}](http://127.0.0.1:8080/graphql?query={books{id,title,price,isbn_no,authors{id,name,biography}}})
+> [http://127.0.0.1:8080/graphql?query={books{id,title,price,isbn_no,authors{id,name,biography}}}](http://127.0.0.1:8080/graphql?query={books{id,title,price,isbn_no,authors{id,name,biography}}})
 
 2. Query for `GetAllTheBooksOf<name>`
-> [{authors(name:"Robi"){id,name,biography,books{id,title,price,isbn_no}}}](http://127.0.0.1:8080/graphql?query={authors(name:"Robi"){id,name,biography,books{id,title,price,isbn_no}}})
-3. Query for `GetAllAuthorsWithBooks`
-> [{authors{id,name,biography,books{id,title,price,isbn_no}}}](http://127.0.0.1:8080/graphql?query={authors{id,name,biography,books{id,title,price,isbn_no}}})
+> [http://127.0.0.1:8080/graphql?query={authors(name:"Robi"){id,name,biography,books{id,title,price,isbn_no}}}](http://127.0.0.1:8080/graphql?query={authors(name:"Robi"){id,name,biography,books{id,title,price,isbn_no}}})
