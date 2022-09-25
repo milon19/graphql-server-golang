@@ -28,7 +28,7 @@ Build a simple graphql server with postgres database that can perform this simpl
 #### With Docker:
 1. Clone this repository
 ```shell
-git clone  
+git clone https://github.com/milon19/graphql-server-golang.git 
 ```
 
 2. Create a `.env` file with following data in project root directory
@@ -51,7 +51,7 @@ Server will start on `127.0.0.0:8080`
 #### Run locally without docker:
 1. Clone this repository
 ```shell
-git clone  
+git clone https://github.com/milon19/graphql-server-golang.git
 ```
 2. Create a .env file by following `.env.example` file in project root directory
 ```dotenv
