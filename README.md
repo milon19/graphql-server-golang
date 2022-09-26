@@ -80,3 +80,47 @@ go run cmd/app/main.go
 
 2. Query for `GetAllTheBooksOf<name>`
 > [http://127.0.0.1:8080/graphql?query={authors(name:"Robi"){id,name,biography,books{id,title,price,isbn_no}}}](http://127.0.0.1:8080/graphql?query={authors(name:"Robi"){id,name,biography,books{id,title,price,isbn_no}}})
+
+### File Structure
+```shell
+├── build
+│   ├── docker-compose.yml
+│   ├── Dockerfile
+│   └── init.sql
+├── cmd
+│   └── app
+│       └── main.go                  // Program entry point
+├── go.mod
+├── go.sum
+├── internal                         // Main source  code
+│   └── app
+│       ├── adapter                  // Outer layer. All Framework and Database related code
+│       │   ├── controller           // Controller funtion
+│       │   │   ├── service.go       // DB service and repository provider
+│       │   │   └── graphql.go
+│       │   ├── db
+│       │   │   └── connections.go   // postgre db connection
+│       │   ├── graphql              // All graphql related code
+│       │   │   ├── dataloader.go
+│       │   │   └── types.go
+│       │   ├── repository          // Implementation of repository
+│       │   │   ├── author.go
+│       │   │   └── book.go
+│       │   ├── route.go
+│       │   └── schema              // Schemas
+│       │       ├── author.go
+│       │       ├── book.go
+│       │       └── graphql.go
+│       ├── application             // Middle Layer. mainly deals with business logic
+│       │   └── usecase
+│       │       ├── author_loader.go
+│       │       └── book_loader.go
+│       └── domain                  // Inner Layer. All Schemas and repository defination
+│           ├── author.go
+│           ├── book.go
+│           └── repository
+│               ├── author.go
+│               └── book.go
+└── README.md
+
+```
