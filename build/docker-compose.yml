@@ -24,7 +24,7 @@ services:
       - '${POSTGRES_PORT}:${POSTGRES_PORT}'
     restart: always
     volumes:
-      - pg_data:/var/lib/postgresql/data
+      - pg_graphql_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       - POSTGRES_PASSWORD=postgres
@@ -32,4 +32,4 @@ services:
     command: -p ${POSTGRES_PORT}
 
 volumes:
-  pg_data:
+  pg_graphql_data:
