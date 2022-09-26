@@ -70,7 +70,7 @@ SERVER_PORT=8080
 go run cmd/app/main.go 
 ```
 
-> **NOTE**: It will be better to run in docker to avoid unexpected errors.
+> **NOTE**: It is recommended to run using docker to avoid unnecessary setup procedure.
 
 ### Test the server:
 #### Queries:
